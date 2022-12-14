@@ -11,6 +11,10 @@ const init = async () => {
 
     app.use(router);
 
+    app.get('', (req, res) => {
+        return res.status(200).send({ status: 'UP' });
+    });
+
     app.listen(port, () => {
         console.log(`App listening at http://localhost:${port}`);
     });
